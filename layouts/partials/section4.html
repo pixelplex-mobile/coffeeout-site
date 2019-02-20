@@ -1,0 +1,47 @@
+{{- $section4 := .Site.Params.section4 }}
+{{- $title    := index $section4 "title" }}
+{{- $subtitle := index $section4 "subtitle" }}
+{{- $clients  := index $section4 "clients" }}
+<section style="background-color:#3ACCE1" id="contact" class="section is-medium section-secondary">
+  <div class="container">
+
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2 light-text is-spaced">{{ $title }}</h2>
+      {{- with $subtitle }}
+      <h3 class="subtitle is-5 light-text">{{ . }}</h3>
+      {{- end }}
+    </div>
+
+    {{/*  <div class="columns is-vcentered">
+      <!-- <div class="column is-4"> -->
+        <figure class="testimonial">
+          <!-- <blockquote> -->
+            <form  class="column is-4" action="https://getform.io/f/defe197d-9137-4e35-b90f-82ca75a9ced0" method="POST">
+              <input class="input is-medium" type="email" name="email">
+              <button class="button" type="submit">Отправить</button>
+          </form> 
+          <!-- </blockquote> -->
+        </figure>
+      <!-- </div> -->
+    </div>  */}}
+
+    <div class="content-wrapper">
+      <div class="columns is-vcentered">
+        {{- range $clients }}
+        <div class="column is-4">
+          <figure class="testimonial">
+            <blockquote>
+              {{ .quote }}
+            </blockquote>
+            <div class="author">
+              <img src="{{ printf "/images/illustrations/faces/%s.png" (string .img) | relURL }}" alt=""/>
+              <h5>{{ .name }}</h5>
+              <span>{{ .job }}</span>
+            </div>
+          </figure>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</section>

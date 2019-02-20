@@ -1,0 +1,32 @@
+baseURL: https://coffeeout.app/
+languageCode: ru
+title: CoffeeOut
+theme: hugo-fresh
+
+params:
+  font:
+    name: "Open Sans"
+    sizes: [400,600]
+  hero:
+    # Main hero title
+    title: CoffeeOut
+    # Hero subtitle (optional)
+    subtitle: Лучшее приложение для кофе в Минске
+    # Button text
+    buttontext: Подписаться ↓
+    # Where the main hero button links to
+    buttonlink: "#contact"
+    # Hero image (from /images/___)
+    image: /splash.png
+    # Footer logos (from /images/logos/clients/___.svg)
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  # section4:
+  #   title: Подписаться!
+  #   subtitle: Получите предварительный доступ и обновления!
+  section5:
+    title: Подписаться!
+    subtitle: Получите предварительный доступ и обновления!
+    emailplaceholder: Email
+    buttontext: Подписаться
+
+    
