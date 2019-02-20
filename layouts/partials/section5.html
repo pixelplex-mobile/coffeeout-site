@@ -4,8 +4,7 @@
 {{- $emailplaceholder := index $section5 "emailplaceholder" }}
 {{- $buttontext := index $section5 "buttontext" }}
 
-
-<section id="content" class="section section-light-grey is-medium">
+<section id="contact" class="section section-light-grey is-medium">
   <div class="container">
     <div class="title-wrapper has-text-centered">
       <h2 class="title is-2 is-spaced"> {{ $title }} </h2>
@@ -18,10 +17,10 @@
     <div class="content-wrapper">
       <div class="columns">
         <div class="column is-6 is-offset-3">
-          <form>
+          <form action="https://getform.io/f/7f84085e-138a-419c-b442-8e2082789721" method="POST">
             <div class="columns is-multiline">
                 <div class="column is-6">
-                    <input class="input is-medium" type="email" placeholder="{{ $emailplaceholder }}">
+                    <input name="email" style="top:6px" class="input is-medium" type="email" placeholder="{{ $emailplaceholder }}">
                   </div>
                   <div class="column is-6">
                       <button class="button cta is-large primary-btn raised is-clear"> {{ $buttontext }} </button>
