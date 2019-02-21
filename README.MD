@@ -1,1 +1,1 @@
-# Test site for CoffeeOut.app
+# Demo site for CoffeeOut.app
