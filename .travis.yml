@@ -2,6 +2,11 @@
 # https://docs.travis-ci.com/user/reference/xenial/
 # https://docs.travis-ci.com/user/languages/go/
 # https://docs.travis-ci.com/user/customizing-the-build/
+env:
+  global:
+  - 'SFTP_USER=[user]'
+  - 'SFTP_PASSWORD=[password]'
+  - 'SFTP_KEY=[base64-encoded-rsa-key]'
 
 dist: xenial
 language: go
@@ -33,3 +38,10 @@ deploy:
   target_branch: master  # branch contains blog content
   on:
     branch: code  # branch contains Hugo generator code
+
+after_success:
+- echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
+- curl --ftp-create-dirs
+       -T filename
+       --key /tmp/sftp_rsa
+       sftp://${SFTP_USER}:${SFTP_PASSWORD}@example.com/directory/filename
